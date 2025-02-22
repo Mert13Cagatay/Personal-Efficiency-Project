@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: floralwhite;
+    color: #333;
+}
+
+.topbar {
+    background-color: #2c3e50;
+    color: floralwhite;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.datetime {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.container {
+    display: flex;
+    height: calc(100vh - 60px);
+}
+
+/* Notes Section */
+.notes-section {
+    flex: 0 0 50%;
+    padding: 20px;
+    background-color: floralwhite;
+    border-right: 1px solid #ddd;
+}
+
+.notes-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.notes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notes-header h2 {
+    color: #2c3e50;
+}
+
+.new-note-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.new-note-btn:hover {
+    background-color: #2980b9;
+}
+
+.notes-textarea {
+    flex-grow: 1;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    resize: none;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: white;
+}
+
+/* Shortcuts Section */
+.shortcuts-section {
+    flex: 0 0 50%;
+    padding: 20px;
+    background-color: floralwhite;
+}
+
+.shortcuts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 15px;
+    height: 100%;
+}
+
+.shortcut-icon-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.shortcut-item {
+    text-decoration: none;
+    color: inherit;
+    background-color: white ;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    padding: 15px 10px;
+}
+
+.shortcut-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.shortcut-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+}

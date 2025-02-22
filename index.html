@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Personal Efficiency Dashboard</title>
+    <link rel="stylesheet" href="./style.css">
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("Kc505WQgTTKQl4hQ6");
+        })();
+    </script>
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <div class="topbar">
+        <div class="datetime" id="datetime">Monday, February 17, 2025 | 15:30:45</div>
+        <div class="user-info">Mert Çağatay</div>
+    </div>
+    
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Notes Section -->
+        <div class="notes-section">
+            <div class="notes-container">
+                <div class="notes-header">
+                    <h2>Quick Notes</h2>
+                    <button class="new-note-btn">New Note</button>
+                </div>
+                <textarea class="notes-textarea" placeholder="Write your notes here..."></textarea>
+            </div>
+        </div>
+        
+        <!-- Shortcuts Section -->
+        <div class="shortcuts-section">
+            <div class="shortcuts-grid">
+                <!-- Existing shortcuts -->
+
+                <div class="shortcut-item">
+                    <a href="https://mail.google.com/mail/u/0/#inbox" class="shortcut-item" target="_blank">
+                        <img src="ImagesFolder/gmaillogo.png" alt="Gmail" class="shortcut-icon-img">
+                        <div class="shortcut-label">Gmail</div>
+                    </a>
+                </div>
+
+                <div class="shortcut-item">
+                    <a href="https://webmail.beta.itu.edu.tr/?_task=mail&_mbox=INBOX" class="shortcut-item" target="_blank">
+                        <img src="ImagesFolder/itülogo.png" alt="İTÜMail" class="shortcut-icon-img">
+                        <div class="shortcut-label">İTÜMail</div>
+                    </a>
+                </div>
+
+                <div class="shortcut-item">
+                    <a href="https://partage.univ-angers.fr/mail#1" class="shortcut-item" target="_blank">
+                        <img src="ImagesFolder/UA.png" alt="Zimbra webmail" class="shortcut-icon-img">
+                        <div class="shortcut-label">Zimra webmail</div>
+                    </a>
+                </div>
+
+                <div class="shortcut-item">
+                    <a href="https://www.linkedin.com/in/mert-%C3%A7a%C4%9Fatay-293b711b8/" class="shortcut-item" target="_blank">
+                        <img src="ImagesFolder/linkedinlogo.png" alt="LinkedIN" class="shortcut-icon-img">
+                        <div class="shortcut-label">Linkedin</div>
+                    </a>
+                </div>
+                <div class="shortcut-item">
+                    <a href="https://chatgpt.com/" class="shortcut-item" target="_blank">
+                        <img src="ImagesFolder/download.png" alt="ChatGPT" class="shortcut-icon-img">
+                        <div class="shortcut-label">ChatGPT</div>
+                    </a>
+                </div>
+                <div class="shortcut-item">
+                    <a href="https://claude.ai/new" class="shortcut-item" target="_blank">
+                        <img src="ImagesFolder/claude-color.png" alt="Claude" class="shortcut-icon-img">
+                        <div class="shortcut-label">Claude</div>
+                    </a>
+                </div>
+                <div class="shortcut-item">
+                    <a href="https://www.deepl.com/en/translator" class="shortcut-item" target="_blank">
+                        <img src="ImagesFolder/images.png" alt="DeepL" class="shortcut-icon-img">
+                        <div class="shortcut-label">DeepL</div>
+                    </a>
+                </div>
+                <div class="shortcut-item">
+                    <a href="https://gazeteoksijen.com/" class="shortcut-item" target="_blank">
+                        <img src="ImagesFolder/oksijen.png" alt="OksijenGazetesi" class="shortcut-icon-img">
+                        <div class="shortcut-label">Oksijen</div>
+                    </a>
+                </div>
+                <div class="shortcut-item">
+                    <a href="https://moodle.univ-angers.fr/my/" class="shortcut-item" target="_blank">
+                        <img src="ImagesFolder/image.png" alt="Moodle" class="shortcut-icon-img">
+                        <div class="shortcut-label">Moodle</div>
+                    </a>
+                </div>
+                <div class="shortcut-item">
+                    <a href="https://edt.univ-angers.fr/edt/v2" class="shortcut-item" target="_blank">
+                        <img src="ImagesFolder/UA.png" alt="UA Timetables" class="shortcut-icon-img">
+                        <div class="shortcut-label">UA TimeTables</div>
+                    </a>
+                </div>
+                <div class="shortcut-item">
+                    <a href="https://notebooklm.google.com/" class="shortcut-item" target="_blank">
+                        <img src="ImagesFolder/notebooklm.png" alt="NotebookLM" class="shortcut-icon-img">
+                        <div class="shortcut-label">NotebookLM</div>
+                    </a>
+                </div>
+
+                <div class="shortcut-item">
+                    <a href="https://github.com/" class="shortcut-item" target="_blank">
+                        <img src="ImagesFolder/githublogo.png" alt="GitHub" class="shortcut-icon-img">
+                        <div class="shortcut-label">GitHub</div>
+                    </a>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Update date and time
+        function updateDateTime() {
+            const now = new Date();
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            
+            const day = days[now.getDay()];
+            const date = now.getDate();
+            const month = months[now.getMonth()];
+            const year = now.getFullYear();
+            
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+            
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            
+            const dateTimeString = `${day}, ${month} ${date}, ${year} | ${hours}:${minutes}:${seconds}`;
+            document.getElementById('datetime').textContent = dateTimeString;
+        }
+        
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+
+        // Notes functionality
+        document.querySelector('.new-note-btn').addEventListener('click', function() {
+            document.querySelector('.notes-textarea').value = '';
+        });
+
+        // Auto-save notes to localStorage
+        const notesTextarea = document.querySelector('.notes-textarea');
+        
+        // Load saved notes
+        notesTextarea.value = localStorage.getItem('dashboardNotes') || '';
+        
+        // Save notes when typing
+        notesTextarea.addEventListener('input', function() {
+            localStorage.setItem('dashboardNotes', this.value);
+        });
+    </script>
+</body>
+</html>
